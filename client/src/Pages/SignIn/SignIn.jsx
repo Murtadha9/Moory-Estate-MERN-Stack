@@ -4,6 +4,7 @@ import {useDispatch , useSelector} from 'react-redux'
 import {signInStart,
   signInSuccess,
   signInFailure,} from '../../redux/user/userSlice'
+import OAuth from '../../Components/OAuth/OAuth'
 
 const SignIn = () => {
   const navigate = useNavigate()
@@ -41,7 +42,7 @@ const SignIn = () => {
     
   }
 
-  console.log(formData)
+
   return (
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-bold my-7'>Sign In</h1>
@@ -52,6 +53,7 @@ const SignIn = () => {
         <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg hover:opacity-95 disabled:opacity-80'>
           {loading ? 'Loading...' :'Sign in'}
           </button>
+          <OAuth/>
       </form>
       <div className='flex gap-3 items-center mt-5'>
         <p>don't Have an account?</p>

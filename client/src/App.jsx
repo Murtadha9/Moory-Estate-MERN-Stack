@@ -8,6 +8,7 @@ import SignUp from './Pages/SignUp/SignUp'
 import Profile from './Pages/Profile/Profile'
 import NotFound from './Pages/NotFound/NotFound'
 import Header from './Components/Header/Header'
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
 
 const App = () => {
   return (
@@ -17,7 +18,9 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/profile/:id" element={<Profile />} />
+        <Route element={<PrivateRoute/>}>
+           <Route path="/profile/" element={<Profile />} />
+        </Route>
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

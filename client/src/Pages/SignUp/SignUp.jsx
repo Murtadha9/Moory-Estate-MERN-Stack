@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {Link ,useNavigate} from 'react-router-dom'
+import OAuth from '../../Components/OAuth/OAuth';
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -14,8 +15,9 @@ const SignUp = () => {
 
   const handleSubmin=async(e)=>{
     e.preventDefault()
-    setLoading(true)
+    
     try {
+      setLoading(true)
       const res=await fetch('/api/auth/signup',{
         method:'POST',
         headers:{
@@ -40,7 +42,7 @@ const SignUp = () => {
     
   }
 
-  console.log(formData)
+ 
   return (
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-bold my-7'>Sign Up</h1>
@@ -51,6 +53,7 @@ const SignUp = () => {
         <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg hover:opacity-95 disabled:opacity-80'>
           {loading ? 'Loading...' :'Sign Up'}
           </button>
+          <OAuth/>
       </form>
       <div className='flex gap-3 items-center mt-5'>
         <p>Have an account?</p>
