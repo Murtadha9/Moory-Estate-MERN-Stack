@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 
 import userRoute from './routes/user.route.js'
 import authRoute from './routes/auth.route.js'
-import listingRouter from './routes/listing.route.js'
+import listingRoute from './routes/listing.route.js'
 
 
 const app= express();
@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
 //Endpoints
 app.use('/api/user', userRoute)
 app.use('/api/auth', authRoute)
-app.use('/api/listing', listingRouter);
+app.use('/api/listing', listingRoute);
 
 //MiddleWare
 app.use((err, req, res, next) => {
