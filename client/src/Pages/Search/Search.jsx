@@ -71,7 +71,7 @@ const Search = () => {
       if (
         e.target.id === 'all' ||
         e.target.id === 'rent' ||
-        e.target.id === 'sale'
+        e.target.id === 'sell'
       ) {
         setSidebardata({ ...sidebardata, type: e.target.id });
       }
