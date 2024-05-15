@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaSearch } from "react-icons/fa";
 import {Link, useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
+import Logo from '../Logo/Logo';
 
 const Header = () => {
   const { currentUser } = useSelector((state) => state.user);
@@ -26,13 +27,18 @@ const Header = () => {
 
 
   return (
-    <header className='bg-slate-200 shadow-md'>
+    <header className='shadow-md bg-gradient-to-r from-slate-300 to-sky-600'>
       <div className='flex items-center justify-between max-w-6xl mx-auto p-3'>
       <Link to={'/'}>
-      <h1 className='flex flex-wrap font-bold sm:text-xl'>
-        <span className=''>Moory</span>
+      <div className='flex items-center gap-10'>
+        <div >
+        <Logo/>
+        </div>
+      <h1 className='flex flex-wrap items-center  font-bold sm:text-xl'>
+        <span className='text-sky-600 font-extrabold'>Moory</span>
         <span className=''>Estate</span>
       </h1>
+      </div>
       </Link>
 
       <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-lg flex items-center'>
@@ -44,10 +50,10 @@ const Header = () => {
       </form>
       <ul className='flex gap-4'>
         <Link to={'/'}>
-            <li className='hidden sm:inline text-slate-700 hover:underline '>Home</li>
+            <li className='hidden sm:inline font-bold text-slate-700 hover:underline '>Home</li>
         </Link>
         <Link to={'/about'}>
-            <li className='hidden sm:inline text-slate-700 hover:underline '>About</li>
+            <li className='hidden sm:inline font-bold text-slate-700 hover:underline '>About</li>
         </Link>
         
         {currentUser ?(
@@ -60,7 +66,7 @@ const Header = () => {
           </Link>
         ):(
           <Link to={'/signin'}>
-          <li className='hidden sm:inline text-slate-700 hover:underline '>Sign In</li>
+          <li className='hidden sm:inline font-bold text-slate-700 hover:underline '>Sign In</li>
       </Link>
         )}
        

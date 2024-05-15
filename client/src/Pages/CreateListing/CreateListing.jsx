@@ -8,6 +8,7 @@ import {
 import { app } from '../../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { FaRegTrashAlt } from "react-icons/fa";
 
 const CreateListing = () => {
 
@@ -266,7 +267,7 @@ const CreateListing = () => {
               multiple
               onChange={(e) => setFiles(e.target.files)}
               />
-                <button type='button' className='p-3 font-bold text-green-700 border border-green-700 rounded hover:shadow-md disabled:opacity-85' onClick={handleImageSubmit}>Upload</button>
+                <button type='button' className='p-3 font-bold text-sky-600 border border-sky-600  rounded hover:shadow-md disabled:opacity-85' onClick={handleImageSubmit}>Upload</button>
             </div>
 
             <p className='text-red-700 text-sm'>
@@ -288,11 +289,11 @@ const CreateListing = () => {
                   onClick={() => handleRemoveImage(index)}
                   className='p-3 text-red-700 rounded-lg uppercase hover:opacity-75'
                 >
-                  Delete
+                  <FaRegTrashAlt/>
                 </button>
               </div>
             ))}
-            <button disabled={loading || uploading} className='p-3 bg-slate-700 text-white rounded-lg hover:opacity-90 disabled:opacity-80'>
+            <button disabled={loading || uploading} className='p-3 bg-slate-500 text-white rounded-lg hover:opacity-90 disabled:opacity-80'>
             {loading ? 'Creating...' : 'Create listing'}
             </button>
             {error && <p className='text-red-700 text-sm'>{error}</p>}

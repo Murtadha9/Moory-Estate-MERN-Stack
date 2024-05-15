@@ -225,7 +225,7 @@ const Search = () => {
                 <option value='createdAt_asc'>Oldest</option>
               </select>
             </div>
-            <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>
+            <button className='bg-slate-500 text-white p-3 rounded-lg uppercase hover:opacity-95'>
               Search
             </button>
           </form>
@@ -236,10 +236,10 @@ const Search = () => {
           </h1>
           <div className='p-7 flex flex-wrap gap-4'>
             {!loading && listings.length === 0 && (
-              <p className='text-xl text-slate-700'>No listing found!</p>
+              <p className='text-xl text-slate-500'>No listing found!</p>
             )}
             {loading && (
-              <p className='text-xl text-slate-700 text-center w-full'>
+              <p className='text-xl text-slate-500 text-center w-full'>
                 Loading...
               </p>
             )}
@@ -253,7 +253,7 @@ const Search = () => {
             {showMore && (
               <button
                 onClick={onShowMoreClick}
-                className='text-green-700 hover:underline p-7 text-center w-full'
+                className='text-sky-600 hover:underline p-7 text-center w-full'
               >
                 Show more
               </button>

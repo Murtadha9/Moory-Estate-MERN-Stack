@@ -50,14 +50,14 @@ const SignUp = () => {
         <input type="text" placeholder='Username' className='border p-3 rounded-lg' id='username' onChange={handleChange}/>
         <input type="email" placeholder='Email' className='border p-3 rounded-lg' id='email' onChange={handleChange}/>
         <input type="password" placeholder='Password' className='border p-3 rounded-lg' id='password' onChange={handleChange}/>
-        <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg hover:opacity-95 disabled:opacity-80'>
+        <button disabled={loading} className='bg-slate-500 text-white p-3 rounded-lg hover:opacity-95 disabled:opacity-80'>
           {loading ? 'Loading...' :'Sign Up'}
           </button>
           <OAuth/>
       </form>
       <div className='flex gap-3 items-center mt-5'>
         <p>Have an account?</p>
-        <Link to={'/signin'}><span className='text-blue-700'>Sign In</span></Link>
+        <Link to={'/signin'}><span className='text-sky-600 font-bold'>Sign In</span></Link>
       </div>
       {error && <p className='text-red-500 mt-5'>{error}</p>}
     </div>
